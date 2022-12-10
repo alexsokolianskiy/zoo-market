@@ -1,6 +1,6 @@
 FROM php:8.1.6-fpm
 
-RUN apt-get update -y && apt-get install -y libpng-dev libzip-dev gcc g++ libtool libmcrypt-dev libpq-dev
+RUN apt-get update -y && apt-get install -y libpng-dev libzip-dev gcc g++ libtool libmcrypt-dev libpq-dev zlib1g-dev unzip
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql bcmath gd zip
 
