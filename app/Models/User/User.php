@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\User;
 
+use Laravel\Sanctum\HasApiTokens;
 use Orchid\Platform\Models\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    use HasApiTokens;
     /**
      * The attributes that are mass assignable.
      *

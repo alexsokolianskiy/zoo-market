@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::get('/user', function (Request $request) {
-    return 'test';
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('/google', [LoginController::class, 'google'])->name('api.auth.google');
+    Route::get('/google-callback', [LoginController::class, 'googleCallback'])->name('api.auth.google.callback');
 });
