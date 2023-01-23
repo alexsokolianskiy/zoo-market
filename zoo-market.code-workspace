@@ -7,5 +7,23 @@
 	"settings": {
 		"phpSniffer.executablesFolder": "vendor/squizlabs/php_codesniffer/bin",
 		"phpSniffer.standard": "PSR12"
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+		 {
+		  "name": "Listen for Xdebug",
+		  "type": "php",
+		  "request": "launch",
+		  "port": 9003,
+		  "proxy": {
+		   "key": "PHPSTORM"
+		  },
+		  "pathMappings": {
+		   "/var/www/html/": "${workspaceFolder}"
+		  }
+		}
+		]
 	}
+	  
 }

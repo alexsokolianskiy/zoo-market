@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\Auth;
 
 use App\Models\User\User;
 use Illuminate\Support\Str;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Laravel\Socialite\Facades\Socialite;
@@ -14,10 +15,10 @@ class LoginController extends Controller
 {
     public function google(): RedirectResponse
     {
-        return  Socialite::driver('google')->stateless()->redirect();
+        return Socialite::driver('google')->stateless()->redirect();
     }
 
-    public function googleCallback()
+    public function googleCallback(): JsonResponse
     {
         try {
             $user = Socialite::driver('google')->stateless()->user();

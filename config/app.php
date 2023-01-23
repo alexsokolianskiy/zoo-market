@@ -16,6 +16,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'reset_password' => env('APP_RESET_PASSWORD_URL', ''),
 
     /*
     |--------------------------------------------------------------------------
